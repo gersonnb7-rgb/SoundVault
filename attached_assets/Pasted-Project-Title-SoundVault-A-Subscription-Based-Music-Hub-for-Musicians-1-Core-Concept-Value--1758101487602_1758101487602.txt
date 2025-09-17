@@ -1,0 +1,45 @@
+Project Title: SoundVault - A Subscription-Based Music Hub for Musicians
+
+1. Core Concept & Value Proposition:
+SoundVault is a web application designed exclusively for musicians to store,manage, and showcase their music catalog. Unlike public streaming services, it acts as a private, professional vault and portfolio. Its unique value is ensuring only active, serious musicians maintain their accounts through a modest quarterly maintenance fee.
+
+2. Core Features (The Must-Haves):
+
+· User Authentication & Profiles:
+  · Secure musician registration and login.
+  · Artists can create and customize a personal profile (bio, photo, genre, links to social media/streaming services).
+· Music Upload & Management Dashboard:
+  · A clean, intuitive dashboard for users to view and manage all their uploaded tracks.
+  · Support for high-quality audio file uploads (MP3, WAV, FLAC).
+  · For each track, musicians can add rich metadata: Title, Artist, Album, Genre, Release Year, Producer Credits, Featured Artists, Lyrics (optional), and a cover art thumbnail.
+  · Ability to edit metadata and delete tracks.
+· Subscription & Payment System (The Core Business Logic):
+  · All new accounts get a 14-day free trial to explore the platform.
+  · After the trial, a recurring subscription fee of 100 NAD (Namibian Dollars) is required every 3 months (quarterly).
+  · Integrated Payment Gateway: Secure integration with a payment provider (e.g., Stripe, PayPal) to handle NAD transactions seamlessly.
+  · Account Status Monitoring:
+    · Active: Can upload, stream, and manage music. Payment is current.
+    · Grace Period (7 days): Payment is overdue. User receives warnings but can still access their account to make the payment.
+    · Suspended: After the grace period, account access is restricted. They cannot upload new music or stream their existing tracks. Their profile and music are not deleted.
+    · Reactivation: A suspended user can reactivate their account by paying the overdue fee. Upon payment, full access is immediately restored.
+· Music Player & Portfolio View:
+  · A sleek, built-in audio player for musicians to play their own uploaded music directly from their dashboard.
+  · A "Public Portfolio" page: A shareable link (e.g., soundvault.app/artist-name) that showcases their profile and music. This is perfect for sending to labels, venues, or collaborators.
+
+3. Advanced & "Nice-to-Have" Features (To Make It Stand Out):
+
+· Private Sharing & Collaboration:
+  · Generate private, shareable links for individual tracks or albums. Perfect for getting feedback from producers or bandmates before official release.
+  · Add password protection or expiration dates to private links.
+· Analytics (Basic Insights):
+  · For each track, show the number of plays on the Public Portfolio page.
+  · In the dashboard, show which tracks are most popular and where your portfolio visitors are coming from (geography).
+· Admin Panel:
+  · A secure backend for you (the admin) to view all users, monitor subscriptions, and manage payments.
+· Notifications & Reminders:
+  · Email Automation:
+    · Welcome email after signup.
+    · Subscription reminder 7 days before renewal.
+    · Payment confirmation receipt.
+    · Grace period warning email.
+    · Account suspension notification.
