@@ -1,11 +1,11 @@
 [project]
-name = "repl-nix-workspace"
+name = "omawi-na"
 version = "0.1.0"
-description = "Add your description here"
+description = "Music hub for musicians with subscription management"
 requires-python = ">=3.11"
 dependencies = [
     "mutagen>=1.47.0",
-    "psycopg2-binary>=2.9.10",
+    "supabase>=2.10.0",
     "sendgrid>=6.12.4",
     "streamlit>=1.49.1",
     "stripe>=12.5.1",
