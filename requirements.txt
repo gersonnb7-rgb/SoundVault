@@ -1,0 +1,5 @@
+mutagen>=1.47.0
+supabase>=2.10.0
+sendgrid>=6.12.4
+streamlit>=1.49.1
+stripe>=12.5.1

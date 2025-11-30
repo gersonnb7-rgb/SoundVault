@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 from auth import require_auth
-from database import create_track
+from database import create_track, update_track_file_path
 from payment import check_subscription_status
 from audio_utils import validate_audio_file, get_audio_metadata, save_uploaded_file
 
@@ -110,40 +110,40 @@ with st.form("upload_track_form", clear_on_submit=True):
                             except:
                                 pass
                         
-                        # Create track record in database
-                        track_id = create_track(
-                            user_id=user['id'],
-                            title=title,
-                            artist=artist,
-                            album=album,
-                            genre=genre,
-                            release_year=release_year,
-                            producer_credits=producer_credits,
-                            featured_artists=featured_artists,
-                            lyrics=lyrics,
-                            file_path="",  # Will be updated after saving
-                            file_size=uploaded_file.size,
-                            duration_seconds=file_metadata.get('duration'),
-                            cover_art_url=cover_art_url if cover_art_url else None
-                        )
-                        
-                        if track_id:
-                            # Save the actual file
-                            file_path = save_uploaded_file(uploaded_file, user['id'], track_id)
-                            
-                            if file_path:
-                                # Update track with file path
-                                from database import get_db_connection
-                                conn = get_db_connection()
-                                if conn:
-                                    cur = conn.cursor()
-                                    cur.execute(
-                                        "UPDATE tracks SET file_path = %s WHERE id = %s",
-                                        (file_path, track_id)
-                                    )
-                                    conn.commit()
-                                    cur.close()
-                                    conn.close()
+                        # Save file first with temporary name
+                        temp_file_path = save_uploaded_file(uploaded_file, user['id'], "temp")
+
+                        if temp_file_path:
+                            # Create track record in database
+                            track_id = create_track(
+                                user_id=user['id'],
+                                title=title,
+                                artist=artist,
+                                album=album,
+                                genre=genre,
+                                release_year=release_year,
+                                producer_credits=producer_credits,
+                                featured_artists=featured_artists,
+                                lyrics=lyrics,
+                                file_path=temp_file_path,
+                                file_size=uploaded_file.size,
+                                duration_seconds=file_metadata.get('duration'),
+                                cover_art_url=cover_art_url if cover_art_url else None
+                            )
+
+                            if track_id:
+                                # Rename file to use track_id
+                                file_ext = os.path.splitext(uploaded_file.name)[1]
+                                user_dir = os.path.dirname(temp_file_path)
+                                final_file_path = os.path.join(user_dir, f"track_{track_id}{file_ext}")
+
+                                try:
+                                    os.rename(temp_file_path, final_file_path)
+                                    update_track_file_path(track_id, final_file_path)
+                                    file_path = final_file_path
+                                except Exception as e:
+                                    print(f"Error renaming file: {e}")
+                                    file_path = temp_file_path
                                 
                                 st.success("🎉 Track uploaded successfully!")
                                 st.balloons()
