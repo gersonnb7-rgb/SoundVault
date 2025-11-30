@@ -5,7 +5,7 @@ from database import get_user_tracks, increment_play_count
 from audio_utils import format_duration
 
 st.set_page_config(
-    page_title="Portfolio - SoundVault",
+    page_title="Portfolio - Omawi Na",
     page_icon="🌐",
     layout="wide"
 )
@@ -154,7 +154,7 @@ else:
 st.markdown("---")
 st.subheader("📱 Share This Portfolio")
 
-portfolio_url = f"https://soundvault.app/{user['username']}"
+portfolio_url = f"https://omawina.app/{user['username']}"
 
 col1, col2 = st.columns([2, 1])
 
@@ -171,7 +171,7 @@ st.markdown("### Share on Social Media")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    twitter_text = f"Check out {user['username']}'s music portfolio on SoundVault!"
+    twitter_text = f"Check out {user['username']}'s music portfolio on Omawi Na!"
     twitter_url = f"https://twitter.com/intent/tweet?text={twitter_text}&url={portfolio_url}"
     if st.button("🐦 Share on Twitter", use_container_width=True):
         st.markdown(f"[Open Twitter]({twitter_url})")
@@ -192,7 +192,7 @@ with col3:
 st.markdown("---")
 st.markdown(
     f"<div style='text-align: center; color: #666; font-size: 0.9em;'>"
-    f"Powered by <strong>SoundVault</strong> • Professional Music Hub for Musicians"
+    f"Powered by <strong>Omawi Na</strong> • Professional Music Hub for Musicians"
     f"</div>", 
     unsafe_allow_html=True
 )

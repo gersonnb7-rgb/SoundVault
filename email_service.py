@@ -36,17 +36,17 @@ def send_email(to_email, from_email, subject, text_content=None, html_content=No
 
 def send_welcome_email(user_email, username):
     """Send welcome email to new user"""
-    subject = "Welcome to SoundVault! 🎵"
+    subject = "Welcome to Omawi Na! 🎵"
     
     html_content = f"""
     <html>
     <body>
-        <h2>Welcome to SoundVault, {username}!</h2>
+        <h2>Welcome to Omawi Na, {username}!</h2>
         
-        <p>Thank you for joining SoundVault, the professional music hub for musicians.</p>
+        <p>Thank you for joining Omawi Na, the professional music hub for musicians.</p>
         
         <h3>Your 14-Day Free Trial Has Started!</h3>
-        <p>You now have full access to all SoundVault features:</p>
+        <p>You now have full access to all Omawi Na features:</p>
         <ul>
             <li>🎼 Upload and manage your music collection</li>
             <li>👤 Create your professional musician profile</li>
@@ -55,32 +55,32 @@ def send_welcome_email(user_email, username):
             <li>📊 Track your music analytics</li>
         </ul>
         
-        <p><strong>Important:</strong> After your 14-day trial, you'll need to subscribe for 100 NAD quarterly to continue using SoundVault.</p>
+        <p><strong>Important:</strong> After your 14-day trial, you'll need to subscribe for 100 NAD quarterly to continue using Omawi Na.</p>
         
         <p>Get started by uploading your first track!</p>
         
-        <p>Best regards,<br>The SoundVault Team</p>
+        <p>Best regards,<br>The Omawi Na Team</p>
     </body>
     </html>
     """
     
     return send_email(
         user_email,
-        "noreply@soundvault.app",
+        "noreply@omawina.app",
         subject,
         html_content=html_content
     )
 
 def send_payment_reminder(user_email, username, days_remaining):
     """Send payment reminder email"""
-    subject = f"SoundVault Payment Reminder - {days_remaining} days remaining"
+    subject = f"Omawi Na Payment Reminder - {days_remaining} days remaining"
     
     html_content = f"""
     <html>
     <body>
         <h2>Payment Reminder, {username}</h2>
         
-        <p>Your SoundVault subscription payment is due in {days_remaining} days.</p>
+        <p>Your Omawi Na subscription payment is due in {days_remaining} days.</p>
         
         <p><strong>Subscription Details:</strong></p>
         <ul>
@@ -91,32 +91,32 @@ def send_payment_reminder(user_email, username, days_remaining):
         
         <p>To avoid any interruption to your service, please ensure your payment method is up to date.</p>
         
-        <p><a href="https://soundvault.app/subscription">Update Payment Method</a></p>
+        <p><a href="https://omawina.app/subscription">Update Payment Method</a></p>
         
-        <p>Thank you for being a valued SoundVault member!</p>
+        <p>Thank you for being a valued Omawi Na member!</p>
         
-        <p>Best regards,<br>The SoundVault Team</p>
+        <p>Best regards,<br>The Omawi Na Team</p>
     </body>
     </html>
     """
     
     return send_email(
         user_email,
-        "billing@soundvault.app",
+        "billing@omawina.app",
         subject,
         html_content=html_content
     )
 
 def send_grace_period_warning(user_email, username):
     """Send grace period warning email"""
-    subject = "SoundVault Account: Payment Overdue - 7 Days to Avoid Suspension"
+    subject = "Omawi Na Account: Payment Overdue - 7 Days to Avoid Suspension"
     
     html_content = f"""
     <html>
     <body>
         <h2>Payment Overdue Warning, {username}</h2>
         
-        <p><strong style="color: #ff6b6b;">Your SoundVault subscription payment is overdue.</strong></p>
+        <p><strong style="color: #ff6b6b;">Your Omawi Na subscription payment is overdue.</strong></p>
         
         <p>You have entered a 7-day grace period. During this time, you can still access your account and make the overdue payment.</p>
         
@@ -130,32 +130,32 @@ def send_grace_period_warning(user_email, username):
         
         <p><strong>Amount Due: 100 NAD</strong></p>
         
-        <p><a href="https://soundvault.app/subscription" style="background: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Pay Now</a></p>
+        <p><a href="https://omawina.app/subscription" style="background: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Pay Now</a></p>
         
-        <p>Questions? Contact us at support@soundvault.app</p>
+        <p>Questions? Contact us at support@omawina.app</p>
         
-        <p>Best regards,<br>The SoundVault Team</p>
+        <p>Best regards,<br>The Omawi Na Team</p>
     </body>
     </html>
     """
     
     return send_email(
         user_email,
-        "billing@soundvault.app",
+        "billing@omawina.app",
         subject,
         html_content=html_content
     )
 
 def send_suspension_notification(user_email, username):
     """Send account suspension notification"""
-    subject = "SoundVault Account Suspended - Payment Required"
+    subject = "Omawi Na Account Suspended - Payment Required"
     
     html_content = f"""
     <html>
     <body>
         <h2>Account Suspended, {username}</h2>
         
-        <p><strong style="color: #dc3545;">Your SoundVault account has been suspended due to overdue payment.</strong></p>
+        <p><strong style="color: #dc3545;">Your Omawi Na account has been suspended due to overdue payment.</strong></p>
         
         <p><strong>Current Status:</strong></p>
         <ul>
@@ -172,32 +172,32 @@ def send_suspension_notification(user_email, username):
             <li>Full access to all features will be restored</li>
         </ol>
         
-        <p><a href="https://soundvault.app/subscription" style="background: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Reactivate Account</a></p>
+        <p><a href="https://omawina.app/subscription" style="background: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Reactivate Account</a></p>
         
-        <p>We understand that circumstances can change. If you're experiencing financial difficulties, please contact us at support@soundvault.app</p>
+        <p>We understand that circumstances can change. If you're experiencing financial difficulties, please contact us at support@omawina.app</p>
         
-        <p>Best regards,<br>The SoundVault Team</p>
+        <p>Best regards,<br>The Omawi Na Team</p>
     </body>
     </html>
     """
     
     return send_email(
         user_email,
-        "billing@soundvault.app",
+        "billing@omawina.app",
         subject,
         html_content=html_content
     )
 
 def send_payment_confirmation(user_email, username, amount, next_due_date):
     """Send payment confirmation email"""
-    subject = "SoundVault Payment Confirmed - Thank You!"
+    subject = "Omawi Na Payment Confirmed - Thank You!"
     
     html_content = f"""
     <html>
     <body>
         <h2>Payment Confirmed, {username}!</h2>
         
-        <p>Thank you for your payment. Your SoundVault subscription has been renewed.</p>
+        <p>Thank you for your payment. Your Omawi Na subscription has been renewed.</p>
         
         <p><strong>Payment Details:</strong></p>
         <ul>
@@ -209,16 +209,16 @@ def send_payment_confirmation(user_email, username, amount, next_due_date):
         
         <p>Your account is now active for the next 3 months. Continue creating and sharing your amazing music!</p>
         
-        <p><a href="https://soundvault.app/dashboard">Go to Dashboard</a></p>
+        <p><a href="https://omawina.app/dashboard">Go to Dashboard</a></p>
         
-        <p>Best regards,<br>The SoundVault Team</p>
+        <p>Best regards,<br>The Omawi Na Team</p>
     </body>
     </html>
     """
     
     return send_email(
         user_email,
-        "billing@soundvault.app",
+        "billing@omawina.app",
         subject,
         html_content=html_content
     )

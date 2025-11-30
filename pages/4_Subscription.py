@@ -9,7 +9,7 @@ from payment import (
 )
 
 st.set_page_config(
-    page_title="Subscription - SoundVault",
+    page_title="Subscription - Omawi Na",
     page_icon="💳",
     layout="wide"
 )
@@ -50,7 +50,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.markdown("""
-    **SoundVault Pro Subscription**
+    **Omawi Na Pro Subscription**
     
     ✅ Unlimited music uploads
     ✅ Professional portfolio page
@@ -82,7 +82,7 @@ if subscription_status in ['trial', 'grace_period', 'suspended']:
     st.markdown("### Make Payment")
     
     if subscription_status == 'trial':
-        st.info("Your free trial is ending soon. Subscribe now to continue using SoundVault!")
+        st.info("Your free trial is ending soon. Subscribe now to continue using Omawi Na!")
     elif subscription_status == 'grace_period':
         st.warning("Your payment is overdue. Please pay now to avoid account suspension.")
     else:

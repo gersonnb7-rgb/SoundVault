@@ -12,7 +12,7 @@ def init_app():
 
 def main():
     st.set_page_config(
-        page_title="SoundVault - Music Hub for Musicians",
+        page_title="Omawi Na - Music Hub for Musicians",
         page_icon="🎵",
         layout="wide"
     )
@@ -28,16 +28,16 @@ def main():
         show_authenticated_app(user)
 
 def show_landing_page():
-    st.title("🎵 SoundVault")
+    st.title("🎵 Omawi Na")
     st.subheader("A Professional Music Hub for Musicians")
     
     col1, col2 = st.columns([2, 1])
     
     with col1:
         st.markdown("""
-        ### Welcome to SoundVault
+        ### Welcome to Omawi Na
         
-        SoundVault is your private, professional vault and portfolio for music. 
+        Omawi Na is your private, professional vault and portfolio for music. 
         Store, manage, and showcase your music catalog with these features:
         
         - 🎼 **Upload & Manage** your music collection (MP3, WAV, FLAC)
@@ -84,7 +84,7 @@ def show_authenticated_app(user):
             st.rerun()
     
     # Main content
-    st.title("🎵 SoundVault Dashboard")
+    st.title("🎵 Omawi Na Dashboard")
     
     # Quick stats
     col1, col2, col3, col4 = st.columns(4)

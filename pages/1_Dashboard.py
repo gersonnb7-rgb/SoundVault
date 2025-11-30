@@ -5,7 +5,7 @@ from payment import check_subscription_status, calculate_days_remaining
 from audio_utils import format_duration, get_file_size_mb
 
 st.set_page_config(
-    page_title="Dashboard - SoundVault",
+    page_title="Dashboard - Omawi Na",
     page_icon="🎵",
     layout="wide"
 )
@@ -149,7 +149,7 @@ else:
 
 # Portfolio link
 st.subheader("🌐 Your Public Portfolio")
-portfolio_url = f"https://soundvault.app/{user['username']}"
+portfolio_url = f"https://omawina.app/{user['username']}"
 st.info(f"Share your music: {portfolio_url}")
 
 if st.button("📋 Copy Portfolio Link", use_container_width=True):

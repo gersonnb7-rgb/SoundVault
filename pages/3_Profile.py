@@ -4,7 +4,7 @@ from auth import require_auth
 from database import update_user_profile, get_user_by_id
 
 st.set_page_config(
-    page_title="Profile - SoundVault",
+    page_title="Profile - Omawi Na",
     page_icon="👤",
     layout="wide"
 )
@@ -202,7 +202,7 @@ with col2:
 # Portfolio link
 st.markdown("---")
 st.subheader("🌐 Public Portfolio")
-portfolio_url = f"https://soundvault.app/{user['username']}"
+portfolio_url = f"https://omawina.app/{user['username']}"
 st.info(f"Your public portfolio: {portfolio_url}")
 
 col1, col2 = st.columns(2)

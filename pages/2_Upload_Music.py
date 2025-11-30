@@ -6,7 +6,7 @@ from payment import check_subscription_status
 from audio_utils import validate_audio_file, get_audio_metadata, save_uploaded_file
 
 st.set_page_config(
-    page_title="Upload Music - SoundVault",
+    page_title="Upload Music - Omawi Na",
     page_icon="🎵",
     layout="wide"
 )
